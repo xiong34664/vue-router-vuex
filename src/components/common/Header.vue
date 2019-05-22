@@ -15,6 +15,10 @@
       <el-menu-item index="my2">选项2</el-menu-item>
     </el-submenu>
     <el-menu-item index="msg">消息中心</el-menu-item>
+    <li class="user-link">
+      <i class="el-icon-setting" ></i>
+      <i class="el-icon-switch-button" @click="logout"></i>
+      </li>
   </el-menu>
 
 </template>
@@ -36,9 +40,26 @@ export default {
     handleSelect (key, keyPath) {
       this.$router.push('/' + keyPath.join('/'))
     },
+    logout() {
+      this.$router.push('/login')
+    }
   }
 }
 </script>
 
 <style scoped>
+.user-link {
+  float: right;
+  height: 60px;
+  line-height: 60px;
+  margin-right: 15px;
+  color: #fff;
+}
+.user-link:focus {
+  outline: none;
+}
+.user-link i {
+  margin: 0 15px;
+  cursor: pointer;
+}
 </style>

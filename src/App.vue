@@ -5,7 +5,6 @@
 
   </div>
   <div v-else>
-
     <Header v-if="isShow" />
     <router-view />
   </div>
@@ -29,7 +28,6 @@ export default {
     };
   },
   created () {
-    console.log(this.$route)
     if (this.$route.name !== 'login') {
       this.isLogin = false
     }
